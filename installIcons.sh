@@ -75,14 +75,25 @@ installSysUtil "Terminal"
 installSysUtil "VoiceOver Utility"
 echo Installed icons for /System/Applications/Utilites
 
-echo Installing Finder icon...
 sudo ./fileicon set ~/lvmnt/System/Library/CoreServices/Finder.app SystemIcons/Finder.icns
 sudo cp SystemIcons/finder.png ~/lvmnt/System/Library/CoreServices/Dock.app/Contents/Resources/
 sudo cp SystemIcons/finder@2x.png ~/lvmnt/System/Library/CoreServices/Dock.app/Contents/Resources/
-
 echo Installed Finder icon!
 
+sudo cp SystemAssets/FibreChannelHD.icns ~/lvmnt/System/Library/Extensions/IOSCSIArchitectureModelFamily.kext/Contents/Resources
+sudo cp SystemAssets/FireWireHD.icns ~/lvmnt/System/Library/Extensions/IOSCSIArchitectureModelFamily.kext/Contents/Resources
+sudo cp SystemAssets/Removable.icns ~/lvmnt/System/Library/Extensions/IOSCSIArchitectureModelFamily.kext/Contents/Resources
+sudo cp SystemAssets/SASHD.icns ~/lvmnt/System/Library/Extensions/IOSCSIArchitectureModelFamily.kext/Contents/Resources
+sudo cp SystemAssets/SCSIParallelHD.icns ~/lvmnt/System/Library/Extensions/IOSCSIArchitectureModelFamily.kext/Contents/Resources
+sudo cp SystemAssets/USBHD.icns ~/lvmnt/System/Library/Extensions/IOSCSIArchitectureModelFamily.kext/Contents/Resources
+echo Installed removable media icons!
+
+sudo cp SystemAssets/External.icns ~/lvmnt/System/Library/Extensions/IOStorageFamily.kext/Contents/Resources
+sudo cp SystemAssets/Internal.icns ~/lvmnt/System/Library/Extensions/IOStorageFamily.kext/Contents/Resources
+sudo cp SystemAssets/Removable.icns ~/lvmnt/System/Library/Extensions/IOStorageFamily.kext/Contents/Resources
+echo Installed disk icons!
+
 sudo bless --mount ~/lvmnt --bootefi --create-snapshot
-sudo bless --mount "$HOME/lvmnt/System/Library/CoreServices/" --setBoot --create-snapshot
+sudo bless --mount "$HOME/lvmnt/System/Library/CoreServices/" --setBoot --create-snapshotfsf
 
 echo Finished installing!
