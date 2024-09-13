@@ -8,6 +8,13 @@ installSysIcon()
 	sudo ./fileicon set ~/lvmnt/System/Applications/"$1".app SystemIcons/"$1".icns
 }
 
+installSysUtil()
+{
+	cd $PWD
+	echo Installing "$1" icon...
+	sudo ./fileicon set ~/lvmnt/System/Applications/Utilities/"$1".app SystemUtils/"$1".icns
+}
+
 read -p "Find the target drive name in the list above (the one WITHOUT the - Data suffix), then enter the #s# values. Then, type them below: " diskNums
 sudo mount -o nobrowse -t apfs /dev/disk$diskNums ~/lvmnt
 
@@ -49,6 +56,25 @@ installSysIcon "TV"
 installSysIcon "VoiceMemos"
 echo Installed icons for /System/Applications
 
+installSysUtil "Activity Monitor"
+installSysUtil "AirPort Utility"
+installSysUtil "Audio MIDI Setup"
+installSysUtil "Bluetooth File Exchange"
+installSysUtil "Boot Camp Assistant"
+installSysUtil "ColorSync Utility"
+installSysUtil "Console"
+installSysUtil "Digital Color Meter"
+installSysUtil "Disk Utility"
+installSysUtil "Grapher"
+installSysUtil "Keychain Access"
+installSysUtil "Migration Assistant"
+installSysUtil "Screen Sharing"
+installSysUtil "Screenshot"
+installSysUtil "System Information"
+installSysUtil "Terminal"
+installSysUtil "VoiceOver Utility"
+echo Installed icons for /System/Applications/Utilites
+
 echo Installing Finder icon...
 sudo ./fileicon set ~/lvmnt/System/Library/CoreServices/Finder.app SystemIcons/Finder.icns
 sudo cp SystemIcons/finder.png ~/lvmnt/System/Library/CoreServices/Dock.app/Contents/Resources/
@@ -57,6 +83,6 @@ sudo cp SystemIcons/finder@2x.png ~/lvmnt/System/Library/CoreServices/Dock.app/C
 echo Installed Finder icon!
 
 sudo bless --mount ~/lvmnt --bootefi --create-snapshot
-sudo bless --mount "$HOME/lvmnt/System/Library/CoreServices/" --setBoot --create-snapshot > /dev/null 2>&1
+sudo bless --mount "$HOME/lvmnt/System/Library/CoreServices/" --setBoot --create-snapshot
 
 echo Finished installing!
