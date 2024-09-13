@@ -51,8 +51,8 @@ echo Installed icons for /System/Applications
 
 echo Installing Finder icon...
 sudo ./fileicon set ~/lvmnt/System/Library/CoreServices/Finder.app SystemIcons/Finder.icns
-sudo cp SystemIcons/finder.png /System/Library/CoreServices/Dock.app/Contents/Resources/
-sudo cp SystemIcons/finder@2x.png /System/Library/CoreServices/Dock.app/Contents/Resources/
+sudo cp SystemIcons/finder.png ~/lvmnt/System/Library/CoreServices/Dock.app/Contents/Resources/
+sudo cp SystemIcons/finder@2x.png ~/lvmnt/System/Library/CoreServices/Dock.app/Contents/Resources/
 
 echo Installed Finder icon!
 
