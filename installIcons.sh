@@ -88,10 +88,19 @@ sudo cp SystemAssets/SCSIParallelHD.icns ~/lvmnt/System/Library/Extensions/IOSCS
 sudo cp SystemAssets/USBHD.icns ~/lvmnt/System/Library/Extensions/IOSCSIArchitectureModelFamily.kext/Contents/Resources
 echo Installed removable media icons!
 
+sudo cp SystemAssets/trashempty.png ~/lvmnt/System/Library/CoreServices/Dock.app/Contents/Resources
+sudo cp SystemAssets/trashempty2.png ~/lvmnt/System/Library/CoreServices/Dock.app/Contents/Resources
+sudo cp SystemAssets/trashempty@2x.png ~/lvmnt/System/Library/CoreServices/Dock.app/Contents/Resources
+sudo cp SystemAssets/trashempty2@2x.png ~/lvmnt/System/Library/CoreServices/Dock.app/Contents/Resources
+sudo cp SystemAssets/trashfull.png ~/lvmnt/System/Library/CoreServices/Dock.app/Contents/Resources
+sudo cp SystemAssets/trashfull2.png ~/lvmnt/System/Library/CoreServices/Dock.app/Contents/Resources
+sudo cp SystemAssets/trashfull@2x.png ~/lvmnt/System/Library/CoreServices/Dock.app/Contents/Resources
+sudo cp SystemAssets/trashfull2@2x.png ~/lvmnt/System/Library/CoreServices/Dock.app/Contents/Resources
+echo Installed trash icons!
+echo "And look at that gorgeous trash can. You won't believe how much time we spent crafting a trash can"
+echo "    - Craig Federighi, WWDC14"
+
 sudo cp SystemAssets/External.icns ~/lvmnt/System/Library/Extensions/IOStorageFamily.kext/Contents/Resources
-sudo cp SystemAssets/Internal.icns ~/lvmnt/System/Library/Extensions/IOStorageFamily.kext/Contents/Resources
-sudo cp SystemAssets/Removable.icns ~/lvmnt/System/Library/Extensions/IOStorageFamily.kext/Contents/Resources
-echo Installed disk icons!
 
 sudo bless --mount ~/lvmnt --bootefi --create-snapshot
 sudo bless --mount "$HOME/lvmnt/System/Library/CoreServices/" --setBoot --create-snapshotfsf
