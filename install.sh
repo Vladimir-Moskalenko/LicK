@@ -51,9 +51,9 @@ sudo mount -o nobrowse -t apfs /dev/disk$diskNums ~/lvmnt
 
 echo Downloading FileIcon icon changing utility...
 curl -O https://raw.githubusercontent.com/mklement0/fileicon/stable/bin/fileicon
-chmod +x fileicon ~/lvmnt/System/Applications/
+chmod +x fileicon 
 
- 
+
 
 sudo bless --mount ~/lvmnt --bootefi --create-snapshot
 sudo bless --mount "$HOME/lvmnt/System/Library/CoreServices/" --setBoot --create-snapshot > /dev/null 2>&1
